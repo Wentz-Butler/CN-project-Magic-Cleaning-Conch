@@ -31,5 +31,128 @@
     {
         "timestamp": "2025-04-20 10:19 AM",
         "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:42 AM",
+        "task": "Clean the litter boxes for at least 0 minutes!",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:42 AM",
+        "task": "Clean the litter boxes for at least 0 minutes!",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:42 AM",
+        "task": "table",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:42 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:46 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:47 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:47 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:48 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:57 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:58 AM",
+        "task": "chair",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:58 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:58 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "couch",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "trash cans",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "Clean out the fridge for at least 0 minutes!",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "bar",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "trash",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "table",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-20 10:59 AM",
+        "task": "counter",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-20 11:00 AM",
+        "timer status": "complete"
     }
 ]
