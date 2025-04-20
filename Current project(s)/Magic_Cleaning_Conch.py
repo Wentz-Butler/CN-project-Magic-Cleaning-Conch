@@ -15,6 +15,26 @@ fridge = (f"Surprise task!\nClean out the fridge")
 
 # === LOGGING FUNCTIONS ===
 
+# Log the launch of the app
+def log_launch(launched):
+    log_entry = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %I:%M %p"),
+        "app launched": launched,
+    }
+    todotyme ="todotyme.json"
+    print("saving launch proof to:", os.path.abspath(todotyme))
+
+    if os.path.exists(todotyme):
+        with open(todotyme, "r") as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = []
+    else:
+        data = []
+    data.append(log_entry)
+    with open(todotyme, "w") as f:
+        json.dump(data, f, indent=4)
 # Overwrite the current list of dirty things to dirtlist.json
 def log_list(current_list):
     
@@ -92,6 +112,7 @@ def open_timer_window(task, duration):
     # ==Timer countdown logic==
     def countdown(mins, secs):
         if mins == 0 and secs == 0:
+            #+++ when timer ends, log it+++
             time_var.set("TIME'S UP!"), (log_complete("complete"), (show_continue_button()))
             winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS)
             return
@@ -154,6 +175,7 @@ def open_timer_window(task, duration):
             else:
                 refined_answer = f"Clean {todo} for {tyme} minutes"        
             refined_text += f"\n{refined_answer}"
+            # ++When the new list is generated, log it++
             log_task(todo, tyme)
             log_list(new_dyrty_list) 
             open_timer_window(todo, tyme)
@@ -162,7 +184,7 @@ def open_timer_window(task, duration):
 
         result_label.config(text=refined_text)
        
-# Timer Start called here
+# +++When start timer is pushed timer+++
     start_button = tk.Button(timer_window, text="Start Timer", command=start_timer)
     start_button.pack(pady=5)
 
@@ -210,7 +232,8 @@ def proccess_input():
 
 # === GUI SETUP ===
 
-root = tk.Tk()
+# +++When the window opens, log it+++
+root = tk.Tk(log_launch("successfully"))
 root.title("Magic (Cleaning) Conch")
 root.wm_attributes('-topmost', True,)
 winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
@@ -224,6 +247,7 @@ entry = tk.Entry(root, width=50, bg = 'white', font=(22))
 entry.pack()
 
 #==Main interaction button==
+#++when button is pushed, do proccess_input++
 submit_button = tk.Button(root, command=proccess_input,text = "Pull the string", bg = 'brown', fg = 'yellow', font=(22)) 
 submit_button.pack()
 
@@ -231,5 +255,5 @@ submit_button.pack()
 result_label = tk.Label(root, text="", font=(22))
 result_label.pack()
 
-# ==Kicks off the app==
+# == Kicks off the app ==
 root.mainloop()
