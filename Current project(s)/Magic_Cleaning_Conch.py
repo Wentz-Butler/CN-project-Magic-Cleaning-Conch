@@ -6,10 +6,16 @@ import winsound
 from datetime import datetime
 import os
 
+# === STATIC PROMPTS AND GLOBAL VARIABLES ===
+
 dirtprompt = f"STOP!\n Look around.\n List all small areas you see that are dirty.\n Use commas.\n (i.e. computer desk, kitchen table, trash can, counter, etc)"
 button_clicked = False
 litter = (f"Surprise task!\nClean the litter boxes")
-fridge = (f"Surprise task!\nClean out the fridge")     
+fridge = (f"Surprise task!\nClean out the fridge")
+
+# === LOGGING FUNCTIONS ===
+
+# Overwrite the current list of dirty things to dirtlist.json
 def log_list(current_list):
     
     dirtlist = "dirtlist.json"
@@ -21,6 +27,7 @@ def log_list(current_list):
     with open(dirtlist, "w") as f:
         json.dump(list_string, f)
 
+# ==Add a task + duration to todotyme.JSON==
 def log_task(task, duration):
     log_entry = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %I:%M %p"),
@@ -45,6 +52,7 @@ def log_task(task, duration):
     with open(todotyme, "w") as f:
         json.dump(data, f, indent=4)
 
+# ==Log when a timer completes==
 def log_complete(timer_up):
     log_entry = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %I:%M %p"),
@@ -66,6 +74,7 @@ def log_complete(timer_up):
     with open(todotyme, "w") as f:
         json.dump(data, f, indent=4)
 
+# === TIMER WINDOW AND RE-ROLL LOGIC===
 def open_timer_window(task, duration):
     timer_window = tk.Toplevel(root)
     timer_window.title("Timer")
@@ -80,6 +89,7 @@ def open_timer_window(task, duration):
     timer_label = tk.Label(timer_window, textvariable=time_var, font=("Courier", 40))
     timer_label.pack(pady=10)
 
+    # ==Timer countdown logic==
     def countdown(mins, secs):
         if mins == 0 and secs == 0:
             time_var.set("TIME'S UP!"), (log_complete("complete"), (show_continue_button()))
@@ -96,10 +106,12 @@ def open_timer_window(task, duration):
     def start_timer():
         countdown(duration, 0)
     
+    # ==Continue button appears when timer ends==
     def show_continue_button():
         continue_button = tk.Button(timer_window, text="continue?", command=List_Reroll)
         continue_button.pack(pady=10)
     
+    # ==Re-roll a new task without on the last completed one==
     def List_Reroll():
         with open("dirtlist.json", "r") as f:
             data = json.load(f)
@@ -150,10 +162,13 @@ def open_timer_window(task, duration):
 
         result_label.config(text=refined_text)
        
-
+# Timer Start called here
     start_button = tk.Button(timer_window, text="Start Timer", command=start_timer)
     start_button.pack(pady=5)
 
+# === USER INPUT HANDLER ===
+
+# ==Activated by button click==
 def proccess_input():
     global button_clicked
     button_clicked = True
@@ -193,6 +208,7 @@ def proccess_input():
 
     result_label.config(text=result_text)
 
+# === GUI SETUP ===
 
 root = tk.Tk()
 root.title("Magic (Cleaning) Conch")
@@ -200,17 +216,20 @@ root.wm_attributes('-topmost', True,)
 winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 root.geometry("+725+400")
 
+#== Prompt label and entry==
 prompt_label =tk.Label(root, text = dirtprompt, fg = 'purple', bg = 'yellow', font=(22))
 prompt_label.pack()
 
 entry = tk.Entry(root, width=50, bg = 'white', font=(22))
 entry.pack()
 
+#==Main interaction button==
 submit_button = tk.Button(root, command=proccess_input,text = "Pull the string", bg = 'brown', fg = 'yellow', font=(22)) 
 submit_button.pack()
 
-
+#==Where the results show up==
 result_label = tk.Label(root, text="", font=(22))
 result_label.pack()
 
+# ==Kicks off the app==
 root.mainloop()
