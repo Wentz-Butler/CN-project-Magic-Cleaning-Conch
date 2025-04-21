@@ -62,5 +62,65 @@
     {
         "timestamp": "2025-04-19 01:05 PM",
         "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-21 01:59 PM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-22 05:56 PM",
+        "task": "Magic_Cleaning_Conch.exe",
+        "choice": "cleaning",
+        "frequency": "Once"
+    },
+    {
+        "timestamp": "2025-04-23 12:00 PM",
+        "task": "testing",
+        "choice": "something else",
+        "frequency": "Weekly"
+    },
+    {
+        "timestamp": "2025-04-30 12:00 PM",
+        "task": "testing",
+        "choice": "something else",
+        "frequency": "Weekly"
+    },
+    {
+        "timestamp": "2025-05-07 12:00 PM",
+        "task": "testing",
+        "choice": "something else",
+        "frequency": "Weekly"
+    },
+    {
+        "timestamp": "2025-05-14 12:00 PM",
+        "task": "testing",
+        "choice": "something else",
+        "frequency": "Weekly"
+    },
+    {
+        "timestamp": "2025-04-21 04:06 PM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-21 04:06 PM",
+        "task": "Clean the litter boxes for at least 0 minutes!",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-21 04:06 PM",
+        "timer status": "complete"
+    },
+    {
+        "timestamp": "2025-04-21 04:07 PM",
+        "app launched": "successfully"
+    },
+    {
+        "timestamp": "2025-04-21 04:07 PM",
+        "task": "monkey",
+        "duration": 0
+    },
+    {
+        "timestamp": "2025-04-21 04:07 PM",
+        "timer status": "complete"
     }
 ]
